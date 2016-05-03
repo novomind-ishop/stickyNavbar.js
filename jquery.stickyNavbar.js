@@ -1,6 +1,6 @@
 /*
  * stickyNavbar.js v1.3.3
- * https://github.com/jbutko/stickyNavbar.js
+ * https://github.com/novomind-ishop/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
  * Developed and maintenained under MIT licence by Jozef Butko - www.jozefbutko.com
