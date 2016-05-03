@@ -99,7 +99,7 @@
           sectionOffsets[sections[i].id] = sections[i].offsetTop;
         }
 
-        var toScroll = $self.hasClass(options.unstickyModeClass) ? sectionOffsets[currentHref] - 2 * thisHeight + 2 + 'px' : sectionOffsets[currentHref] - thisHeight + 2 + 'px';
+        var toScroll = sectionOffsets[currentHref] - thisHeight + 2 + 'px';
 
         // on nav click navigate to selected section
         $('html, body').stop().animate({
@@ -212,7 +212,7 @@
 
           /* 3.) As soon as we get back to the top of the page */
           // if top of the window is over this() (nav container)
-          if (windowPosition <= $selfScrollTop - 2) {
+          if (windowPosition <= $selfScrollTop + options.startAt - 2) {
             $self.removeClass(options.cssAnimation + ' animated');
 
             // if jQuery effects are turned on
@@ -224,7 +224,7 @@
               }
 
               // if the top of the window is under the this() stick the nav and start the animation
-              if (windowPosition >= $selfScrollTop) {
+              if (windowPosition >= $selfScrollTop + options.startAt) {
                 $self.css({
                   'position': 'fixed',
                   'zIndex': options.zindex
